@@ -40,7 +40,7 @@ include(":app")
 //include(":common:utils")
 //
 //// CORE
-//include(":core:network")
+include(":core:network")
 //include(":core:database")
 //include(":core:recources")
 //
