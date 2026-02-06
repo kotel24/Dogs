@@ -14,6 +14,7 @@ pluginManagement {
         }
         mavenCentral()
         gradlePluginPortal()
+        maven("https://maven.pkg.jetbrains.space/public/p/compose/dev")
     }
 }
 
@@ -41,7 +42,7 @@ include(":app")
 //
 //// CORE
 include(":core:network")
-//include(":core:database")
+include(":core:database")
 //include(":core:recources")
 //
 //// FEATURES

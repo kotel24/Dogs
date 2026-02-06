@@ -8,9 +8,10 @@ import io.ktor.serialization.kotlinx.json.json
 import kotlinx.serialization.json.Json
 import org.koin.dsl.module
 
+private const val DOGS_API = "https://dog.ceo/api/"
 val networkModule = module {
 
-    single {
+    single<HttpClient> {
         HttpClient {
             install(ContentNegotiation) {
                 json(Json {
@@ -21,14 +22,14 @@ val networkModule = module {
             }
             install(Logging) {
                 logger = Logger.SIMPLE
-                level = LogLevel.ALL
+                level = LogLevel.INFO
             }
         }
     }
     single<NetworkClient> {
         KtorNetworkClient(
             httpClient = get(),
-            baseUrl = "https://dog.ceo/api/"
+            baseUrl = DOGS_API
         )
     }
 }
