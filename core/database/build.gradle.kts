@@ -1,7 +1,6 @@
 plugins {
     alias(libs.plugins.kotlinMultiplatform)
     alias(libs.plugins.androidLibrary)
-    alias(libs.plugins.kotlinSerialization)
     alias(libs.plugins.ksp)
     alias(libs.plugins.room)
 }
@@ -22,11 +21,8 @@ kotlin {
             implementation(libs.koin.core)
             implementation(libs.androidx.room.runtime)
             implementation(libs.sqlite.bundled)
-            implementation(libs.sqlite)
         }
-        androidMain.dependencies {
-            implementation(libs.koin.android)
-        }
+
     }
 }
 
