@@ -32,7 +32,7 @@ dependencyResolutionManagement {
 }
 
 // APP
-include(":app")
+include(":composeApp")
 
 //// COMMON
 //include(":common:mvi:mvi-general")

@@ -13,10 +13,9 @@ plugins {
     alias(libs.plugins.kotlinJvm) apply false
     alias(libs.plugins.ksp) apply false
     alias(libs.plugins.room) apply false
-    alias(libs.plugins.detekt) apply false
 }
 
-tasks.register<Delete>("clean") {
+task("clean", Delete::class) {
     delete(rootProject.layout.buildDirectory)
 }
 
@@ -25,7 +24,6 @@ tasks.withType(KotlinCompile::class.java).all {
         jvmTarget = JvmTarget.JVM_21
     }
 }
-
 
 tasks.register<JavaExec>("ktlint") {
     group = LifecycleBasePlugin.VERIFICATION_GROUP
@@ -36,7 +34,7 @@ tasks.register<JavaExec>("ktlint") {
 }
 
 dependencies {
-    ktlintConfig(libs.ktlint) {
+    ktlintConfig(libs.ktlint.get().toString()) {
         attributes {
             attribute(Bundling.BUNDLING_ATTRIBUTE, objects.named(Bundling.EXTERNAL))
         }
