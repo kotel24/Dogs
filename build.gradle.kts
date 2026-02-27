@@ -13,7 +13,7 @@ plugins {
     alias(libs.plugins.kotlinJvm) apply false
     alias(libs.plugins.ksp) apply false
     alias(libs.plugins.room) apply false
-    alias(libs.plugins.detekt)
+    alias(libs.plugins.detekt) apply false
 }
 
 task("clean", Delete::class) {
@@ -26,16 +26,6 @@ tasks.withType(KotlinCompile::class.java).all {
     }
 }
 
-detekt {
-    toolVersion = libs.versions.detekt.get()
-    parallel = true
-    config = files("$rootDir/detekt.yml")
-    source = files(
-        "src/main/java", "src/main/kotlin",
-        "src/test/java", "src/test/kotlin",
-        "src/androidTest/java", "src/androidTest/kotlin"
-    )
-}
 
 tasks.register<JavaExec>("ktlint") {
     group = LifecycleBasePlugin.VERIFICATION_GROUP
