@@ -19,3 +19,5 @@ interface DogImageDao {
     @Query("SELECT * FROM dog_images")
     fun observe(): Flow<List<DogImageEntity>>
 }
+package org.example.project 
+

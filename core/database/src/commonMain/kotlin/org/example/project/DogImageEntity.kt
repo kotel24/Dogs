@@ -9,3 +9,5 @@ data class DogImageEntity(
     val id: Long = 0,
     val imageUrl: String,
 )
+package org.example.project 
+

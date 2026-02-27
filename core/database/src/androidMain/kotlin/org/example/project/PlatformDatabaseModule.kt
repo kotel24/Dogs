@@ -24,3 +24,6 @@ private fun getDatabase(
     .setDriver(BundledSQLiteDriver())
     .setQueryCoroutineContext(Dispatchers.IO)
     .build()
+import org.koin.core.module.Module
+
+internal expect fun platformDatabaseModule(fileName: String): Module

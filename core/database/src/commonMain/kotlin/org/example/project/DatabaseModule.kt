@@ -6,3 +6,5 @@ val databaseModule
         .apply {
             single<DogImageDao> { get<AppDatabase>().dogsDao() }
         }
+class DatabaseModule {
+}

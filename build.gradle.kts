@@ -13,6 +13,7 @@ plugins {
     alias(libs.plugins.kotlinJvm) apply false
     alias(libs.plugins.ksp) apply false
     alias(libs.plugins.room) apply false
+    alias(libs.plugins.detekt) apply false
 }
 
 task("clean", Delete::class) {
@@ -24,6 +25,7 @@ tasks.withType(KotlinCompile::class.java).all {
         jvmTarget = JvmTarget.JVM_21
     }
 }
+
 
 tasks.register<JavaExec>("ktlint") {
     group = LifecycleBasePlugin.VERIFICATION_GROUP

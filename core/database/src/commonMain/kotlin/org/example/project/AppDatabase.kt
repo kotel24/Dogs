@@ -14,3 +14,5 @@ abstract class AppDatabase : RoomDatabase() {
 }
 
 private const val DATABASE_VERSION = 1
+package org.example.project 
+
