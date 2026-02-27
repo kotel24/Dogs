@@ -1,4 +1,8 @@
 package org.example.project
 
-class DatabaseModule {
-}
+
+val databaseModule
+    get() = platformDatabaseModule(fileName = "database.db")
+        .apply {
+            single<DogImageDao> { get<AppDatabase>().dogsDao() }
+        }
